@@ -1,0 +1,19 @@
+{
+  "name": "3datamodelling",
+  "version": "1.0.0",
+  "description": "learning mongoose data modelling",
+  "main": "index.js",
+   
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "suraj",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2"
+  },
+  "type": "module"
+}
