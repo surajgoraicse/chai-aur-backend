@@ -7,12 +7,12 @@ function App() {
 	useEffect(() => {
 		axios
 			.get("/api/jokes")
-      .then((res) => {
-        setJokes(res.data)
-        console.log(res.data);
-      })
+			.then((res) => {
+				setJokes(res.data);
+				console.log(res.data);
+			})
 			.catch((err) => {
-				console.log("error axios data: " , err);
+				console.log("error axios data: ", err);
 			});
 	}, []);
 
