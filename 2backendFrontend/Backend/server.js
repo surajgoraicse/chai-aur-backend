@@ -1,5 +1,6 @@
 // const express = require('express')
 import express from "express"
+import 'dotenv/config'
 
 
 const app = express()
@@ -46,7 +47,7 @@ app.get('/api/jokes' , (req , res) => {
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-    console.log(`server at https://localhost:${port}`);
+    console.log(`server at http://localhost:${port}`);
 })
 
 
