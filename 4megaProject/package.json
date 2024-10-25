@@ -1,0 +1,21 @@
+{
+  "name": "4megaproject",
+  "version": "1.0.0",
+  "description": "advance backend ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "backend",
+    "chai"
+  ],
+  "author": "Suraj",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
