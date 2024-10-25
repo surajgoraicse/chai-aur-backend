@@ -12,6 +12,8 @@ const orderItemSchema = new mongoose.Schema({
         required : true,
     }
 })
+
+
 const orderSchema = new mongoose.Schema({
     orderPrice: {
         type: Number,
