@@ -7,10 +7,7 @@
 
 import "dotenv/config"
 import connectDB from "./db/index.js";
-
-
-connectDB();
-
+import { app } from "./app.js";
 
 /* Approach 1:
 
@@ -39,5 +36,19 @@ const app = express()
 
 */
 
+const port = process.env.PORT || 8000;          
 
- 
+
+connectDB()   // handle the promise returned by async function 
+    .then(() => { 
+        app.on("error", (error) => {            // handling the error event
+            console.log("Error :", error);
+            throw error;
+        })
+        app.listen( port , () => {   //define server listening port 
+            console.log("Server is listening at port : " , port);
+        })
+    })
+    .catch((error) => {      
+        console.log("DB connection failes " , error);
+    })
