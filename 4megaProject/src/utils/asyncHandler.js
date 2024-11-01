@@ -17,7 +17,7 @@ export { asyncHandler };
 
 
 
-
+// second method using arrow function 
 // export const asyncHandler = (fn) => {
 //     async (req, res, next) => {
 //         try {
