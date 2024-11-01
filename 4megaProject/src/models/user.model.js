@@ -52,7 +52,7 @@ const userSchema = new Schema({
 }, { timestamps: true })
 
 
-// middlewares
+// middlewares for encrypting password
 userSchema.pre("save", async function () {   // can't use arrow fn as they does not have access to this keyword
     if (!this.isModified("password")) return next();
 
@@ -61,12 +61,14 @@ userSchema.pre("save", async function () {   // can't use arrow fn as they does 
 })
 
 
-// adding a custom methods 
+// adding a custom methods to compare password
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
 }
 
-userSchema.methods.generateAccessToken = function () {  // don't use callback functions
+
+// generating JWT tokens 
+userSchema.methods.generateAccessToken = function () {  // don't use arrow functions
    return  jwt.sign(
         {
         _id: this._id,
@@ -81,6 +83,7 @@ userSchema.methods.generateAccessToken = function () {  // don't use callback fu
         }
     )
 };
+
 userSchema.methods.generateRefreshToken = function () { 
     return  jwt.sign(
         {
@@ -89,7 +92,6 @@ userSchema.methods.generateRefreshToken = function () {
         process.env.REFRESH_TOKEN_SECRET ,
         {
             expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
-            
         }
     )
 };
