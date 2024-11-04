@@ -32,11 +32,11 @@ app.use(cookieParser())
 
 
 
-// import routes
+// import router
 import userRouter from "./routes/user.routes.js";
 
 // routes declaration  ( app.get("/users" , () =>{}) )
-// a middleware is used to create routes
+// here a middleware is used to create routes so,
 // app.use("/users" , userRouter)
 
 app.use("/api/v1/users", userRouter)
