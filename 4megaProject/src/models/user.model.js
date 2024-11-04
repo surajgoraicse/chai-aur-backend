@@ -58,7 +58,7 @@ userSchema.pre("save", async function () {   // can't use arrow fn as they does 
 
     this.password = await bcrypt.hash(this.password, 10)   // check this part (await)  TODO:
     next();
-})
+                        })
 
 
 // adding a custom methods to compare password
