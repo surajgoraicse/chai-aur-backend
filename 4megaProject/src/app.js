@@ -30,4 +30,21 @@ app.use(express.static("public",))
 app.use(cookieParser())
 
 
+
+
+// import routes
+import userRouter from "./routes/user.routes.js";
+
+// routes declaration  ( app.get("/users" , () =>{}) )
+// a middleware is used to create routes
+// app.use("/users" , userRouter)
+
+app.use("/api/v1/users", userRouter)
+// http://localhost:8000/api/v1/users/ -> prfix url 
+// http://localhost:8000/api/v1/users/<route> -> actual url
+// when the user hit the url the control is passed to userRouter middleware
+
+
+
+
 export { app }
