@@ -24,7 +24,7 @@ app.use(express.urlencoded({
 }))
 
 // conf to store static files (public assets)
-app.use(express.static("public",))
+app.use(express.static("public"))
 
 // conf cookie-parser
 app.use(cookieParser())

@@ -21,9 +21,13 @@ const registerUser = asyncHandler(async (req, res) => {
     // remove password and refresh tokken from response
     // return response
 
+
+    // get data from the frontend:
     const { username, email, fullName, password, avatar, coverImage } = req.body;
     console.log("email ", email);
 
+
+    // check if any field is empty:
     // if (username = "") {
     //     throw new ApiError(500 , "Username cannot be empty" ,)
     // }
@@ -36,10 +40,10 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new ApiError(400, "All fields are required");
     }
 
+    // check if user exists:
     const existedUser = User.findOne({
         $or: [{ username }, { email }]
     })
-
     if (existedUser) {
         throw new ApiError(409, "User with email or username exist");
     }
