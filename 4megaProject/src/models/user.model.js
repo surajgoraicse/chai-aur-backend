@@ -61,7 +61,7 @@ userSchema.pre("save", async function () {   // can't use arrow fn as they does 
 })
 
 
-// adding a custom methods to compare password
+// adding a custom methods to compare password 
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);
 }
