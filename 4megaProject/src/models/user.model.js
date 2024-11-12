@@ -68,7 +68,7 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 
 
 // generating JWT tokens 
-userSchema.methods.generateAccessToken = function () {  // don't use arrow functions
+userSchema.methods.generateAccessToken = function () {  // don't use arrow functions ...
     return jwt.sign(
         {
             _id: this._id,
