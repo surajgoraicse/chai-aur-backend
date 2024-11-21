@@ -14,7 +14,7 @@ const uploadOnCloudinary = async (localFilePath) => {
             console.log("Invalid file path");
             return null;
         }
-        const response = await cloudinary.uploader.upload(localFilePath, {    // TODO: delete the file 
+        const response = await cloudinary.uploader.upload(localFilePath, {    // TODO: delete the file  
             resource_type: "auto",
         });
 
